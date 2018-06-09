@@ -3,10 +3,11 @@ import Button from './common/Button';
 import CardSection from './common/CardSection';
 import Card from './common/Card';
 import {TextInput} from 'react-native';
-
+import {connect} from 'react-redux';
+import {emailChanged} from '../actions'
 class LoginForm extends Component {
     onEmailCHange(text) {
-        
+        this.props.emailChanged(text)
     }
     render() {
         return (
@@ -39,4 +40,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default connect(null, {emailChanged})(LoginForm);
